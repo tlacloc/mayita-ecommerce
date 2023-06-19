@@ -26,24 +26,12 @@
       <!-- footer -->
       <footer id="footer" class="pb-4 pt-4">
         <div class="container">
-          <div class="row text-center">
-            <div class="col-12 col-lg">
-              <h5>Recibe nuestras promociones</h5>
+          <div class="row text-center text-center font-weight-normal">
+            <div class="col-12 col-lg-12">
+              <h2>Recibe nuestras promociones</h2>
             </div>
-          </div>
-          <div class="row text-center">
-            <div class="col-12 col-lg">
-              <h6>
-                Enterate de nuestras promociones y nuevos productos
-              </h6>
-              <form>
-                <div class="form-group">
-                  <input id="exampleInputEmail1" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico">
-                </div>
-                <button type="submit" class="btn btn-primary">
-                  Enviar
-                </button>
-              </form>
+            <div class="col-12 col-lg-12">
+              <span>Enterate de nuestras nuevas colecciones, promociones y más aquí.</span>
             </div>
           </div>
         </div>
