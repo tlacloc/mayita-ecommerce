@@ -33,21 +33,37 @@
             <div class="col-12 col-lg-12">
               <span>Enterate de nuestras nuevas colecciones, promociones y más aquí.</span>
             </div>
+            <div class="col-12 col-lg-12">
+              <b-form @submit="onSubmit" @reset="onReset">
+                <b-form-group
+                  id="input-group-1"
+                  label-for="input-1"
+                >
+                  <b-form-input
+                    id="input-1"
+                    v-model="form.email"
+                    type="email"
+                    placeholder="Correo electrónico"
+                    required
+                  />
+                </b-form-group>
+              </b-form>
+            </div>
           </div>
         </div>
         <div class="container">
-          <div class="row">
+          <div class="row text-left">
             <div class="col">
-              <h5 class="text-left">
+              <h5>
                 Mas información
               </h5>
-              <h6 class="text-left">
+              <h6>
                 Envios
               </h6>
-              <h6 class="text-left">
+              <h6>
                 Cambios y devoluciones
               </h6>
-              <h6 class="text-left">
+              <h6>
                 ¿Cuál es mi talla?
               </h6>
               <h6>
@@ -64,9 +80,18 @@
               </h6>
             </div>
             <div class="col">
-              <h5 class="text-left">
+              <h5>
                 Contactanos
               </h5>
+              <h6 href="">
+                WhatsApp
+              </h6>
+              <h6 href="">
+                Correo
+              </h6>
+              <h6 href="">
+                Horario: Lunes a Viernes de 9:00 a 18:00 hrs.
+              </h6>
             </div>
           </div>
         </div>
@@ -81,7 +106,38 @@
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  data () {
+    return {
+      form: {
+        email: '',
+        name: '',
+        food: null,
+        checked: []
+      },
+      foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
+      show: true
+    }
+  },
+  methods: {
+    onSubmit (event) {
+      event.preventDefault()
+      alert(JSON.stringify(this.form))
+    },
+    onReset (event) {
+      event.preventDefault()
+      // Reset our form values
+      this.form.email = ''
+      this.form.name = ''
+      this.form.food = null
+      this.form.checked = []
+      // Trick to reset/clear native browser form validation state
+      this.show = false
+      this.$nextTick(() => {
+        this.show = true
+      })
+    }
+  }
 }
 </script>
 
